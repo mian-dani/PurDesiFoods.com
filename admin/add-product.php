@@ -4,11 +4,14 @@
 if(isset($_POST['submit'])){
     require "connection.php";
 
-    $title = $_POST['title'];
-    $desc = $_POST['desc'];
-    $price = $_POST['price'];
+    $title = mysqli_real_escape_string($conn,$_POST['title']);
+    $desc = mysqli_real_escape_string($conn,$_POST['desc']);
+    $price = mysqli_real_escape_string($conn,$_POST['price']);
     
-    echo $title;
+    $q = "INSERT INTO products (title , price, description) VALUES ('{$title}', '{$price}', '{$desc}' )";
+    $result = mysqli_query($conn, $q) or die("Query failed to insert product details in database") ;
+
+
 }
 
 
