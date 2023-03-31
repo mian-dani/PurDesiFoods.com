@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/styles.css">
    
 </head>
-<body class="bg-success">
+<body class="bg-success" style="max-width: 100%">
 
  
    <?php 
